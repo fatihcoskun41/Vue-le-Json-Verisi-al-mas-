@@ -26,7 +26,7 @@
   </thead>
   <tbody>
 
-    <tr v-for="i in filteredwithNamePosts"  :key="i.numericCode">
+    <tr v-for="i in filteredwithAllPropertyPosts"  :key="i.numericCode">
 
       <td style="width:25%">{{i.name}}</td>
       <td style="width:25%">{{i.capital}}</td>
@@ -73,7 +73,7 @@ export default {
      return this.list.filter(post => post.capital.toLowerCase().includes(this.search.toLowerCase()))
       // capitala göre sıralama
     },
-    filteredwithNamePosts(){
+    filteredwithAllPropertyPosts(){
       return this.list.filter(post=>
           post.name.toLowerCase().includes(this.search.toLowerCase()) || post.capital.toLowerCase().includes(this.search.toLowerCase()) || post.region.toLowerCase().includes(this.search.toLowerCase())
           //tüm değerlere göre sıralama
